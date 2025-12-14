@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React, { useState } from "react";
 
@@ -10,7 +10,9 @@ export default function Contact() {
     message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -30,7 +32,8 @@ export default function Contact() {
             Contact Us
           </h1>
           <p className="text-lg sm:text-xl mb-6 text-gray-100">
-            Have questions? Need a custom LT panel or motor rewinding solution? Reach out to us!
+            Have questions? Need a custom LT panel or motor rewinding solution?
+            Reach out to us!
           </p>
         </div>
       </section>
@@ -41,16 +44,18 @@ export default function Contact() {
         <div className="flex flex-col justify-center space-y-6">
           <h2 className="text-3xl font-bold text-emerald-700">Get in Touch</h2>
           <p className="text-gray-600">
-            We are here to assist you with LT panel manufacturing, motor rewinding, or any industrial electrical service.
+            We are here to assist you with LT panel manufacturing, motor
+            rewinding, or any industrial electrical service.
           </p>
           <div className="space-y-4">
             <p className="flex items-center text-gray-700">
               <span className="mr-3 text-emerald-600 text-xl">📍</span>
-              123 Industrial Road, City, State, ZIP
+              Shop N. 17, Guru Gobind Singh Nagar, Near SBI Bank, Batala Road,
+              Amritsar
             </p>
             <p className="flex items-center text-gray-700">
               <span className="mr-3 text-emerald-600 text-xl">📞</span>
-              +91 98765 43210
+              +91 98149-49530, +91 98556-56450
             </p>
             <p className="flex items-center text-gray-700">
               <span className="mr-3 text-emerald-600 text-xl">✉️</span>
@@ -135,12 +140,16 @@ export default function Contact() {
           Visit Our Workshop
         </h2>
         <p className="text-gray-600 mb-6">
-          Located in the industrial hub, we welcome clients for consultations and project discussions.
+          Located in the industrial hub, we welcome clients for consultations
+          and project discussions.
         </p>
         <div className="max-w-4xl mx-auto h-64 bg-gray-300 rounded-2xl flex items-center justify-center">
-          <p className="text-gray-700">Map Placeholder (Embed Google Map here)</p>
+          <p className="text-gray-700">
+            Map Placeholder (Embed Google Map here)
+          </p>
         </div>
       </section>
     </main>
   );
 }
+  
