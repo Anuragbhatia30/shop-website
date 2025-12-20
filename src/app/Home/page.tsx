@@ -7,6 +7,9 @@ export default function Home() {
     <main className="min-h-screen bg-gray-50 text-gray-800">
       {/* Hero Section */}
       <section className="relative flex flex-col items-center justify-center text-center py-20 bg-gradient-to-r from-emerald-700 via-teal-700 to-green-700 text-white mt-">
+        <div className="absolute top-2 right-6 text-sm sm:text-base font-semibold tracking-wide">
+          <span className="text-sm font-medium border rounded-lg px-2 py-1">GST No. : 03AEDPB0688L1Z0</span>
+        </div>
         <div className="max-w-3xl px-6">
           <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">
             Reliable LT Panels & Motor Winding Repair Services
@@ -37,7 +40,7 @@ export default function Home() {
         <h2 className="text-3xl font-bold text-center text-emerald-700 mb-10">
           Our Expertise
         </h2>
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+        <div className="max-w-8xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-6">
           {[
             {
               title: "LT Panel Manufacturing",
@@ -45,8 +48,8 @@ export default function Home() {
               icon: "⚙️",
             },
             {
-              title: "Motor Winding Repair",
-              desc: "Expert rewinding and servicing for all types of AC motors, ensuring maximum efficiency.",
+              title: "Motor/Generator Winding Repair",
+              desc: "Expert rewinding and servicing for all types of AC/DC motors and Generators, ensuring maximum efficiency.",
               icon: "🔧",
             },
             {
@@ -54,6 +57,11 @@ export default function Home() {
               desc: "Comprehensive electrical maintenance solutions for factories and plants.",
               icon: "🏭",
             },
+            {
+              title: "Deals in Chemical Earthings",
+              desc: "Supplying and installing chemical earthings for enhanced safety and performance.",
+              icon: "🛠️",
+            }
           ].map((service) => (
             <div
               key={service.title}

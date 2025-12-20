@@ -26,8 +26,13 @@ export default function Contact() {
   return (
     <main className="min-h-screen bg-gray-50 text-gray-800">
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center text-center py-20 bg-gradient-to-r from-emerald-700 via-teal-700 to-green-700 text-white">
-        <div className="max-w-3xl px-6">
+      <section className="relative flex flex-col items-center justify-center text-center bg-gradient-to-r from-emerald-700 via-teal-700 to-green-700 text-white">
+        {/* Top-right Contact text */}
+        <div className="absolute top-2 right-6 text-sm sm:text-base font-semibold tracking-wide">
+          <span className="text-sm font-medium border rounded-lg px-2 py-1">GST No. : 03AEDPB0688L1Z0</span>
+        </div>
+
+        <div className="max-w-3xl px-6 mt-20 mb-16">
           <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">
             Contact Us
           </h1>
@@ -50,12 +55,12 @@ export default function Contact() {
           <div className="space-y-4">
             <p className="flex items-center text-gray-700">
               <span className="mr-3 text-emerald-600 text-xl">📍</span>
-              Shop N. 17, Guru Gobind Singh Nagar, Near SBI Bank, Batala Road,
+              Shop N. 17, Guru Gobind Singh Nagar, Near SBI Bank, Pillar No. 50, Batala Road,
               Amritsar
             </p>
             <p className="flex items-center text-gray-700">
               <span className="mr-3 text-emerald-600 text-xl">📞</span>
-              +91 98149-49530, +91 98556-56450
+              +91 98149-49530, +91 98556-56405
             </p>
             <p className="flex items-center text-gray-700">
               <span className="mr-3 text-emerald-600 text-xl">✉️</span>
@@ -152,4 +157,3 @@ export default function Contact() {
     </main>
   );
 }
-  

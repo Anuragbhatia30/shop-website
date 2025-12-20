@@ -37,8 +37,9 @@ const Navbar: React.FC = () => {
     >
       <div className="max-w-9xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex-shrink-0 text-white font-bold text-xl tracking-wide">
-            Kamal Electrical Trading Co.
+          <div className="flex  flex-col items-center text-white font-bold text-xl tracking-wide">
+            Kamal Electric Trading Co.{' '}
+            
           </div>
           <div className="hidden md:flex space-x-6">
             {navItems.map((item) => (

@@ -8,6 +8,9 @@ export default function Services() {
     <main className="min-h-screen bg-gray-50 text-gray-800">
       {/* Hero Section */}
       <section className="relative flex flex-col items-center justify-center text-center py-20 bg-gradient-to-r from-emerald-700 via-teal-700 to-green-700 text-white">
+        <div className="absolute top-2 right-6 text-sm sm:text-base font-semibold tracking-wide">
+          <span className="text-sm font-medium border rounded-lg px-2 py-1">GST No. : 03AEDPB0688L1Z0</span>
+        </div>
         <div className="max-w-3xl px-6">
           <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">
             Our Services
@@ -25,26 +28,28 @@ export default function Services() {
           What We Offer
         </h2>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6">
+        <div className="max-w-8xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6">
           {[
             {
               title: "LT Panel Manufacturing ⚙️",
               desc: "We design and manufacture reliable, customized LT panels that meet all safety and performance standards. Our panels are built for industrial, commercial, and residential power systems.",
               details: [
                 "Power Control Center (PCC)",
-                "Motor Control Center (MCC)",
+                "Automatic Power Factor Panel (APFC)",
+                "Power Supply Control Panel (PSCP)",
                 "AMF & Synchronization Panels",
                 "Distribution Boards (DB)",
               ],
             },
             {
-              title: "AC Motor Winding Repair 🔧",
-              desc: "Our expert technicians provide rewinding, overhauling, and maintenance services for all types of AC motors — ensuring maximum performance and long motor life.",
+              title: "AC/DC Motor Winding Repair 🔧",
+              desc: "Our expert technicians provide rewinding, overhauling, and maintenance services for all types of AC and DC motors — ensuring maximum performance and long motor life.",
               details: [
                 "Single-phase & Three-phase rewinding",
                 "Bearing replacement",
                 "Insulation testing & varnishing",
                 "Dynamic balancing & load testing",
+                "Generator winding services"
               ],
             },
             {
