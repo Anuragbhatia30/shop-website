@@ -8,9 +8,9 @@ export default function Services() {
     <main className="min-h-screen bg-gray-50 text-gray-800">
       {/* Hero Section */}
       <section className="relative flex flex-col items-center justify-center text-center py-20 bg-gradient-to-r from-emerald-700 via-teal-700 to-green-700 text-white">
-        <div className="absolute top-2 right-6 text-sm sm:text-base font-semibold tracking-wide">
+        {/* <div className="absolute top-2 right-6 text-sm sm:text-base font-semibold tracking-wide">
           <span className="text-sm font-medium border rounded-lg px-2 py-1">GST No. : 03AEDPB0688L1Z0</span>
-        </div>
+        </div> */}
         <div className="max-w-3xl px-6">
           <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">
             Our Services
