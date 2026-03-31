@@ -2,130 +2,147 @@
 
 import React from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { MoveRight, CheckCircle2 } from "lucide-react";
 
 export default function Services() {
   return (
-    <main className="min-h-screen bg-gray-50 text-gray-800">
+    <main className="min-h-screen bg-neutral-50 text-slate-900 font-sans">
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center text-center py-20 bg-gradient-to-r from-emerald-700 via-teal-700 to-green-700 text-white">
-        {/* <div className="absolute top-2 right-6 text-sm sm:text-base font-semibold tracking-wide">
-          <span className="text-sm font-medium border rounded-lg px-2 py-1">GST No. : 03AEDPB0688L1Z0</span>
-        </div> */}
-        <div className="max-w-3xl px-6">
-          <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">
-            Our Services
+      <section className="relative h-[60vh] flex flex-col items-center justify-center text-center bg-gradient-to-br from-emerald-900 via-teal-900 to-slate-900 text-white overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 0.15, scale: 1 }}
+          transition={{ duration: 12, repeat: Infinity, repeatType: "reverse" }}
+          className="absolute inset-0 bg-[url('/images/image 4.jpeg')] bg-cover bg-center"
+        />
+        <div className="absolute inset-0 bg-black/50" />
+        
+        <motion.div
+           initial={{ opacity: 0, y: 30 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.8 }}
+           className="max-w-4xl px-6 relative z-10"
+        >
+          {/* <span className="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wider text-emerald-300 uppercase bg-emerald-950/50 backdrop-blur-md border border-emerald-500/30 rounded-full">
+            Our Professional Expertise
+          </span> */}
+          <h1 className="text-5xl sm:text-7xl font-extrabold mb-8 tracking-tight leading-[1.1]">
+            Comprehensive <span className="text-emerald-400">Electrical Services</span>
           </h1>
-          <p className="text-lg sm:text-xl mb-6 text-gray-100">
-            Delivering top-quality electrical solutions — from LT panel
-            manufacturing to professional AC motor rewinding and maintenance.
+          <p className="text-xl sm:text-2xl mb-10 text-emerald-50/80 font-normal max-w-2xl mx-auto">
+            From bespoke LT panel manufacturing to precision motor rewinding and industrial maintenance.
           </p>
-        </div>
+        </motion.div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-16 bg-white">
-        <h2 className="text-3xl font-bold text-center text-emerald-700 mb-12">
-          What We Offer
-        </h2>
+      {/* Services Grid Section */}
+      <section className="py-24 max-w-7xl mx-auto px-6 overflow-hidden">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">What We <span className="text-emerald-700 underline decoration-emerald-200 underline-offset-8">Deliver</span></h2>
+          <p className="text-slate-600 text-lg max-w-2xl mx-auto">We provide end-to-end industrial electrical solutions designed for uptime, safety, and operational efficiency.</p>
+        </div>
 
-        <div className="max-w-8xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={{
+            visible: { transition: { staggerChildren: 0.15 } }
+          }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+        >
           {[
             {
-              title: "LT Panel Manufacturing ⚙️",
-              desc: "We design and manufacture reliable, customized LT panels that meet all safety and performance standards. Our panels are built for industrial, commercial, and residential power systems.",
-              details: [
-                "Power Control Center (PCC)",
-                "Automatic Power Factor Panel (APFC)",
-                "Power Supply Control Panel (PSCP)",
-                "AMF & Synchronization Panels",
-                "Distribution Boards (DB)",
-              ],
+              title: "LT Panel Manufacturing",
+              desc: "Custom-designed LT panels built for industrial, commercial, and residential power distribution systems.",
+              icon: "⚙️",
+              details: ["Power Control Center (PCC)", "Automatic Power Factor (APFC)", "AMF & Synchronization Panels", "Distribution Boards (DB)"]
             },
             {
-              title: "AC/DC Motor Winding Repair 🔧",
-              desc: "Our expert technicians provide rewinding, overhauling, and maintenance services for all types of AC and DC motors — ensuring maximum performance and long motor life.",
-              details: [
-                "Single-phase & Three-phase rewinding",
-                "Bearing replacement",
-                "Insulation testing & varnishing",
-                "Dynamic balancing & load testing",
-                "Generator winding services"
-              ],
+              title: "AC/DC Motor Winding",
+              desc: "Expert rewinding and overhauling for all types of industrial motors, ensuring maximum longevity.",
+              icon: "🔧",
+              details: ["Single & Three-phase rewinding", "Insulation testing", "Dynamic balancing", "Generator services"]
             },
             {
-              title: "Industrial Electrical Maintenance 🏭",
-              desc: "Comprehensive preventive and corrective maintenance for your industrial electrical systems to minimize downtime and ensure safety compliance.",
-              details: [
-                "Routine inspections",
-                "Fault detection & troubleshooting",
-                "Panel and wiring maintenance",
-                "Energy efficiency optimization",
-              ],
+              title: "Industrial Maintenance",
+              desc: "Preventive and corrective maintenance for industrial electrical systems to eliminate downtime.",
+              icon: "🏭",
+              details: ["Routine inspections", "Fault troubleshooting", "Panel maintenance", "Safety compliance audits"]
             },
             {
-              title: "Panel Upgradation & Retrofitting ⚡",
-              desc: "We upgrade existing panels with modern components, improving efficiency, reliability, and safety while reducing operational costs.",
-              details: [
-                "Old system modernization",
-                "Smart monitoring integration",
-                "Relay and switchgear replacement",
-                "Thermal scanning and analysis",
-              ],
+              title: "Retrofitting & Upgrades",
+              desc: "Modernizing existing systems with smart components for better monitoring and lower costs.",
+              icon: "⚡",
+              details: ["System modernization", "Relay replacement", "Smart monitoring", "Thermal analysis"]
             },
             {
-              title: "On-Site Electrical Support 🧰",
-              desc: "We provide on-site diagnosis and repair services for industrial clients to ensure quick resolution and minimal production loss.",
-              details: [
-                "24/7 support availability",
-                "Emergency troubleshooting",
-                "On-site motor rewinding & installation",
-                "Preventive electrical audits",
-              ],
+              title: "On-Site Support",
+              desc: "24/7 technical assistance and on-site diagnosis for urgent industrial electrical challenges.",
+              icon: "🧰",
+              details: ["Emergency repairs", "Preventive audits", "On-site installation", "Quick diagnosis"]
             },
             {
-              title: "Custom Electrical Solutions 🛠️",
-              desc: "Have a special project? We create tailored solutions for your power and control systems based on specific industrial requirements.",
-              details: [
-                "Custom LT panel design",
-                "Automation integration",
-                "Load balancing solutions",
-                "Energy-saving consultation",
-              ],
-            },
-          ].map((service) => (
-            <div
+              title: "Custom Engineering",
+              desc: "Tailored electrical solutions built based on your specific industrial requirements and goals.",
+              icon: "🛠️",
+              details: ["Control system design", "Automation integration", "Load balancing", "Energy consultation"]
+            }
+          ].map((service, index) => (
+            <motion.div
               key={service.title}
-              className="bg-gray-50 border-t-4 border-emerald-600 p-6 rounded-2xl shadow hover:shadow-xl transition"
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              className="group p-10 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-2xl hover:border-emerald-100 transition-all duration-500 overflow-hidden relative"
             >
-              <h3 className="font-bold text-xl text-emerald-700 mb-3">
-                {service.title}
-              </h3>
-              <p className="text-gray-600 mb-4">{service.desc}</p>
-              <ul className="text-gray-700 list-disc list-inside space-y-1 text-sm">
-                {service.details.map((item, i) => (
-                  <li key={i}>{item}</li>
+              <div className="absolute top-0 right-0 p-8 text-emerald-50 text-8xl font-black group-hover:text-emerald-100/50 transition-colors pointer-events-none -mr-4 -mt-4">
+                {index + 1}
+              </div>
+              
+              <div className="text-5xl mb-8 relative z-10">{service.icon}</div>
+              <h3 className="text-2xl font-bold mb-4 text-slate-800 group-hover:text-emerald-700 transition-colors relative z-10">{service.title}</h3>
+              <p className="text-slate-500 mb-8 relative z-10 leading-relaxed">{service.desc}</p>
+              
+              <ul className="space-y-3 relative z-10">
+                {service.details.map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-slate-600 text-sm font-medium">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                    {item}
+                  </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-gradient-to-r from-emerald-700 via-teal-700 to-green-700 text-white text-center">
-        <h2 className="text-3xl font-bold mb-4">
-          Looking for Reliable Electrical Solutions?
-        </h2>
-        <p className="mb-6 text-lg">
-          Partner with us for customized LT panels, expert motor winding, and
-          industrial maintenance services.
-        </p>
-        <Link
-          href="/contact"
-          className="bg-white text-emerald-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
+      {/* CTA Section */}
+      <section className="py-24 bg-emerald-900 text-white text-center relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
+        <div className="absolute -top-24 -left-24 w-96 h-96 bg-emerald-600/20 blur-[100px] rounded-full" />
+        
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="relative z-10 max-w-4xl mx-auto px-6"
         >
-          Contact Us
-        </Link>
+          <h2 className="text-4xl sm:text-5xl font-extrabold mb-6 tracking-tight">
+            Ready for Excellence?
+          </h2>
+          <p className="mb-10 text-xl text-emerald-100/80 max-w-2xl mx-auto">
+            Partner with us for customized LT panels, expert motor winding, and proactive industrial maintenance services.
+          </p>
+          <Link
+            href="/contact"
+            className="group inline-flex items-center gap-3 bg-white text-emerald-900 px-10 py-5 rounded-full font-bold text-lg hover:bg-emerald-50 hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-300 transform hover:-translate-y-1"
+          >
+            Start Your Consultation <MoveRight className="group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </motion.div>
       </section>
     </main>
   );

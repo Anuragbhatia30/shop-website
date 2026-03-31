@@ -1,6 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  ShieldCheck,
+  Send,
+  MoveRight,
+} from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -11,7 +20,7 @@ export default function Contact() {
   });
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -24,138 +33,231 @@ export default function Contact() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-50 text-gray-800">
+    <main className="min-h-screen bg-neutral-50 text-slate-900 font-sans">
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center text-center bg-gradient-to-r from-emerald-700 via-teal-700 to-green-700 text-white">
-        {/* Top-right Contact text */}
-        {/* <div className="absolute top-2 right-6 text-sm sm:text-base font-semibold tracking-wide">
-          <span className="text-sm font-medium border rounded-lg px-2 py-1">GST No. : 03AEDPB0688L1Z0</span>
-        </div> */}
+      <section className="relative h-[50vh] flex flex-col items-center justify-center text-center bg-gradient-to-br from-emerald-900 via-teal-900 to-slate-900 text-white overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 0.15, scale: 1 }}
+          transition={{ duration: 15, repeat: Infinity, repeatType: "reverse" }}
+          className="absolute inset-0 bg-[url('/images/image 5.jpeg')] bg-cover bg-center"
+        />
+        <div className="absolute inset-0 bg-black/50" />
 
-        <div className="max-w-3xl px-6 mt-20 mb-16">
-          <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">
-            Contact Us
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-4xl px-6 relative z-10"
+        >
+          {/* <span className="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wider text-emerald-300 uppercase bg-emerald-950/50 backdrop-blur-md border border-emerald-500/30 rounded-full">
+            24/7 Support Available
+          </span> */}
+          <h1 className="text-5xl sm:text-7xl font-extrabold mb-8 tracking-tight leading-[1.1]">
+            Contact <span className="text-emerald-400">Our Team</span>
           </h1>
-          <p className="text-lg sm:text-xl mb-6 text-gray-100">
-            Have questions? Need a custom LT panel or motor rewinding solution?
-            Reach out to us!
+          <p className="text-xl sm:text-2xl mb-10 text-emerald-50/80 font-normal max-w-2xl mx-auto">
+            Have questions or need a custom solution? Reach out to our engineers
+            for expert advice.
           </p>
-        </div>
+        </motion.div>
       </section>
 
       {/* Contact Info + Form */}
-      <section className="py-16 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
-        {/* Contact Info */}
-        <div className="flex flex-col justify-center space-y-6">
-          <h2 className="text-3xl font-bold text-emerald-700">Get in Touch</h2>
-          <p className="text-gray-600">
-            We are here to assist you with LT panel manufacturing, motor
-            rewinding, or any industrial electrical service.
-          </p>
-          <div className="space-y-4">
-            <p className="flex items-center text-gray-700">
-              <span className="mr-3 text-emerald-600 text-xl">📍</span>
-              Shop N. 17, Guru Gobind Singh Nagar, Near SBI Bank, Pillar No. 50, Batala Road,
-              Amritsar
-            </p>
-            <p className="flex items-center text-gray-700">
-              <span className="mr-3 text-emerald-600 text-xl">📞</span>
-              +91 98149-49530, +91 98556-56405
-            </p>
-             <p className="flex items-center text-gray-700">
-              <span className="mr-2 text-emerald-600 text-xl">🧰</span>
-              <span className="text- font-medium rounded-lg px-2 py-1">GST No. : 03AEDPB0688L1Z0</span>
-            </p>
-            {/* <p className="flex items-center text-gray-700">
-              <span className="mr-4 text-emerald-600 text-xl">✉️</span>
-              info@ltpanels.com
-            </p> */}
-          </div>
-        </div>
-
-        {/* Contact Form */}
-        <form
-          className="bg-white p-8 rounded-2xl shadow-lg space-y-4"
-          onSubmit={handleSubmit}
-        >
-          <div>
-            <label className="block text-gray-700 font-semibold mb-1">
-              Name
-            </label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-            />
-          </div>
-
-          <div>
-            <label className="block text-gray-700 font-semibold mb-1">
-              Email
-            </label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-            />
-          </div>
-
-          <div>
-            <label className="block text-gray-700 font-semibold mb-1">
-              Subject
-            </label>
-            <input
-              type="text"
-              name="subject"
-              value={formData.subject}
-              onChange={handleChange}
-              required
-              className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-            />
-          </div>
-
-          <div>
-            <label className="block text-gray-700 font-semibold mb-1">
-              Message
-            </label>
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              rows={5}
-              required
-              className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-            ></textarea>
-          </div>
-
-          <button
-            type="submit"
-            className="w-full bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition"
+      <section className="py-24 max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          {/* Contact Info */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col justify-center space-y-12"
           >
-            Send Message
-          </button>
-        </form>
+            <div>
+              <h2 className="text-4xl font-bold text-slate-800 mb-6">
+                Get in <span className="text-emerald-700">Touch</span>
+              </h2>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                We are dedicated to assisting you with LT panel manufacturing,
+                motor rewinding, and comprehensive industrial electrical
+                services.
+              </p>
+            </div>
+
+            <div className="space-y-8">
+              {[
+                {
+                  icon: <MapPin className="w-6 h-6" />,
+                  title: "Our Location",
+                  detail:
+                    "Shop N. 17, Guru Gobind Singh Nagar, Near SBI Bank, Pillar No. 50, Batala Road, Amritsar",
+                },
+                {
+                  icon: <Phone className="w-6 h-6" />,
+                  title: "Phone Numbers",
+                  detail: "+91 98149-49530, +91 98556-56405",
+                },
+                {
+                  icon: <ShieldCheck className="w-6 h-6" />,
+                  title: "GST Registration",
+                  detail: "03AEDPB0688L1Z0",
+                },
+              ].map((item, i) => (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  key={i}
+                  className="flex items-start gap-6 group"
+                >
+                  <div className="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-bold text-slate-800 mb-1">
+                      {item.title}
+                    </h4>
+                    <p className="text-slate-600">{item.detail}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Contact Form */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <form
+              className="bg-white p-10 rounded-3xl shadow-2xl space-y-6 border border-slate-100"
+              onSubmit={handleSubmit}
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-slate-700 font-bold mb-2 text-sm uppercase tracking-wider">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="John Doe"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
+                  />
+                </div>
+                <div>
+                  <label className="block text-slate-700 font-bold mb-2 text-sm uppercase tracking-wider">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="john@example.com"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-slate-700 font-bold mb-2 text-sm uppercase tracking-wider">
+                  Subject
+                </label>
+                <input
+                  type="text"
+                  name="subject"
+                  placeholder="Inquiry about LT Panels"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
+                />
+              </div>
+
+              <div>
+                <label className="block text-slate-700 font-bold mb-2 text-sm uppercase tracking-wider">
+                  Message
+                </label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={5}
+                  placeholder="How can we help you?"
+                  required
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
+                ></textarea>
+              </div>
+
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                type="submit"
+                className="w-full bg-emerald-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-emerald-500 shadow-lg shadow-emerald-500/30 transition-all flex items-center justify-center gap-3"
+              >
+                Send Message <Send className="w-5 h-5" />
+              </motion.button>
+            </form>
+          </motion.div>
+        </div>
       </section>
 
-      {/* CTA / Map Placeholder */}
-      <section className="py-20 bg-gray-100 text-center">
-        <h2 className="text-3xl font-bold text-emerald-700 mb-4">
-          Visit Our Workshop
-        </h2>
-        <p className="text-gray-600 mb-6">
-          Located in the industrial hub, we welcome clients for consultations
-          and project discussions.
-        </p>
-        <div className="max-w-4xl mx-auto h-64 bg-gray-300 rounded-2xl flex items-center justify-center">
-          <p className="text-gray-700">
-            Map Placeholder (Embed Google Map here)
+      {/* Workshop Location */}
+      <section className="py-24 bg-slate-900 overflow-hidden text-center relative">
+        <div className="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <h2 className="text-4xl font-bold text-white mb-6">
+            Visit Our <span className="text-emerald-400">Workshop</span>
+          </h2>
+          <p className="text-slate-400 text-lg mb-12 max-w-2xl mx-auto">
+            Located in Amritsar&apos;s industrial hub, we welcome you for
+            technical consultations and project reviews.
           </p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="w-full h-[400px] bg-slate-800 rounded-3xl overflow-hidden relative border border-slate-700"
+          >
+            {/* Map Placeholder with visual treatment */}
+            <div className="absolute inset-0 flex items-center justify-center flex-col text-slate-500">
+              {/* <MapPin className="w-16 h-16 mb-4 opacity-20" />
+                <p className="font-semibold uppercase tracking-[0.2em]">Interactive Map View</p>
+                <p className="text-xs mt-2 opacity-50">Amritsar Industrial Zone</p> */}
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d357.0157554153487!2d74.90319154821505!3d31.646842197273212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919633961e74f03%3A0x259c255d97dc224c!2s50%2C%20Batala%20Rd%2C%20near%20DARGA%20WALI%20GALI%2C%20near%20SBI%20BRANCH%2C%20Khanna%20Nagar%2C%20Amritsar%2C%20Punjab%20143001!5e0!3m2!1sen!2sin!4v1774872413120!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>{" "}
+            </div>
+
+            {/* Gradient Overlays */}
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent" />
+            <div className="absolute bottom-8 left-8 right-8 flex flex-col md:flex-row items-center justify-between text-white text-left gap-6">
+              {/* <div>
+                  <h4 className="font-bold text-xl mb-1">Batala Road Facility</h4>
+                  <p className="text-slate-300 text-sm">Industrial Hub, Amritsar, Punjab</p>
+                </div> */}
+              <a
+                href="#"
+                className="bg-emerald-600 px-6 py-2 rounded-full text-sm font-bold hover:bg-emerald-500 transition-colors"
+              >
+                Open in Google Maps
+              </a>
+            </div>
+          </motion.div>
         </div>
       </section>
     </main>
