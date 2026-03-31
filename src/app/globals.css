@@ -133,3 +133,9 @@ body {
     @apply font-sans;
   }
 }
+
+iframe {
+  pointer-events: auto;
+  position: relative;
+  z-index: 10;
+}

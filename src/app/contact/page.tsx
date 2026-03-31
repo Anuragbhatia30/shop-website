@@ -240,6 +240,7 @@ export default function Contact() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
+                pointer-events="auto"
               ></iframe>{" "}
             </div>
 
